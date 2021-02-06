@@ -1,4 +1,4 @@
-# Session3 - Basics: Example 1 - Lists
+# Session3 - Basics: Example 2 - Lists
 # SCRP
 # Daryl Dang
 
