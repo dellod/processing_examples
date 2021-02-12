@@ -1,4 +1,4 @@
-# Session3 - Basics: Example 4 - Relational Operators
+# Session3 - Lists, Operators, and Conditions: Example 4 - Relational Operators
 # SCRP
 # Daryl Dang
 

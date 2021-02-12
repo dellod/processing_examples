@@ -1,4 +1,4 @@
-# Session3 - Basics: Example 5 - if statement
+# Session3 - Lists, Operators, and Conditions: Example 5 - if statement
 # SCRP
 # Daryl Dang
 
@@ -23,7 +23,3 @@ if b > a:
     
 if a > b:
     print("a is greater than b!")
-    
-
-    
-    

@@ -1,4 +1,4 @@
-# Session3 - Basics: Example 1 - Moving Circle Improved
+# Session3 - Lists, Operators, and Conditions: Example 1 - Moving Circle Improved
 # SCRP
 # Daryl Dang
 
@@ -21,4 +21,3 @@ def draw():
     radius += 1 # Grow the size
     x_pos += 1 # Move the x position
     y_pos += 1 # Move the y position
-    

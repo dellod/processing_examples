@@ -1,4 +1,4 @@
-# Session3 - Basics: Example 7 - elif statement
+# Session3 - Lists, Operators, and Conditions: Example 7 - elif statement
 # SCRP
 # Daryl Dang
 

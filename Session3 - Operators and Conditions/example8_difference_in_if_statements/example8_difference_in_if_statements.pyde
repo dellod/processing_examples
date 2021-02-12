@@ -1,4 +1,4 @@
-# Session3 - Basics: Example 8 - Difference in if statements
+# Session3 - Lists, Operators, and Conditions: Example 8 - Difference in if statements
 # SCRP
 # Daryl Dang
 
@@ -30,4 +30,3 @@ elif percentage_grade >= 75:
     print("You get a B")
 else:
     print("You get a grade less than B")
-    

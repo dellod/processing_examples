@@ -1,8 +1,6 @@
-# Session3 - Basics: Example 9 - Ball Going Around Screen
+# Session3 - Lists, Operators, and Conditions: Example 9 - Ball Going Around Screen
 # SCRP
 # Daryl Dang
-
-import time
 
 # GLOBAL VARIABLES
 screen_width = 500
@@ -23,6 +21,7 @@ def setup():
     
 def draw():
     global x_pos, y_pos, x_inc_value, y_inc_value
+
     # Redraw background
     background(0) # Black
 
@@ -45,10 +44,7 @@ def draw():
     elif y_pos <= initial_y and x_pos <= initial_x:
         x_inc_value = default_inc_value
         y_inc_value = 0
+
     # Increment the position of the circle
     x_pos += x_inc_value
     y_pos += y_inc_value
-
-
-
-    

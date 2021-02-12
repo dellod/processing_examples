@@ -1,4 +1,4 @@
-# Session3 - Basics: Example 3 - Lists cont
+# Session3 - Lists, Operators, and Conditions: Example 3 - Lists cont
 # SCRP
 # Daryl Dang
 
