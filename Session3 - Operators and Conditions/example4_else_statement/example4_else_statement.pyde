@@ -1,4 +1,4 @@
-# Session3 - Lists, Operators, and Conditions: Example 6 - else statement
+# Session3 - Operators and Conditions: Example 4 - else statement
 # SCRP
 # Daryl Dang
 

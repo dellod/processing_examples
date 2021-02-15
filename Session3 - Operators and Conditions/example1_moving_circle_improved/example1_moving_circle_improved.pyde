@@ -1,4 +1,4 @@
-# Session3 - Lists, Operators, and Conditions: Example 1 - Moving Circle Improved
+# Session3 - Operators and Conditions: Example 1 - Moving Circle Improved
 # SCRP
 # Daryl Dang
 

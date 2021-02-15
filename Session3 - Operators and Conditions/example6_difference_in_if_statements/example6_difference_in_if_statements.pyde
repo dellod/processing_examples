@@ -1,4 +1,4 @@
-# Session3 - Lists, Operators, and Conditions: Example 8 - Difference in if statements
+# Session3 - Operators and Conditions: Example 6 - Difference in if statements
 # SCRP
 # Daryl Dang
 
