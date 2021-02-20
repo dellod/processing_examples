@@ -1,4 +1,4 @@
-# Session3 - Operators and Conditions: Example 7 - Ball Going Around Screen
+# Session3 - Operators and Conditions: Example 8 - Ball Going Around Screen
 # SCRP
 # Daryl Dang
 
