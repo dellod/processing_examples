@@ -6,7 +6,7 @@
 This example will set the display window to full screen.
 """
 
-def settings():
+def setup():
     size(displayWidth, displayHeight)
     print(displayWidth)
     print(displayHeight)
