@@ -1,7 +1,7 @@
 # Session2 - Basics: Example 7 - Advanced Bouncing Ball
 # SCRP
 # Daryl Dang
-import time
+
 # Globals
 x_position = 25
 y_position = 25
@@ -15,7 +15,6 @@ bottom_of_screen = 500 - (circle_diameter / 2)
 def setup():
     size(500, 500)
     smooth() # Removes anti_aliasing
-    time.sleep(5)
 
 def draw():
     background(0)
