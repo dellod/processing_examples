@@ -1,4 +1,4 @@
-# Session4 - Lists and Loops: Example 7 - Drawing Multiple Shapes
+# Session4 - Lists and Loops: Example 8 - Drawing Multiple Shapes Advanced
 # SCRP
 # Daryl Dang
 
@@ -28,5 +28,15 @@ def draw():
         fill(circle_colour[0], circle_colour[1], circle_colour[2])
         circle(starting_x_pos * i, starting_y_pos, circle_rad)
         i += 1
+
+    starting_y_pos += falling_speed
     
-            
+    # Once circles are COMPLETELY off screen, reset them and their colours.
+    if (starting_y_pos - circle_rad) > screen_h:
+        starting_y_pos = initial_y_origin
+        
+        # Go through a while loop to change each colour in list randomly.
+        j = 0
+        while j < len(circle_colour):
+            circle_colour[j] = random(0, 255)
+            j += 1
