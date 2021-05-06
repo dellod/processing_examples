@@ -21,9 +21,6 @@ in_game = False
 in_game_over = False
 has_game_value_been_adjusted = False
 
-# Game mode difficulty (selected by user)
-game_mode_difficulty = game_modes[1] # Set to MEDIUM by default
-
 # Paddles
 user_paddle_y_pos = cpu_paddle_y_pos = s_height / 2 - PADDLE_RECT_SIZE[1] / 2 # STARTING POSITIONS
 user_paddle_speed = 40 # DEFAULT
@@ -41,6 +38,7 @@ sq_y_speed = 0 # DEFAULT
 # Scores
 user_score = 0
 cpu_score = 0
+did_user_win = False
 
 def settings():
     size(s_width, s_height)
@@ -51,7 +49,19 @@ def draw():
         pass
     elif not(run_game()):
         pass
-    
+    elif in_game_over:
+        # End game with results
+        background("#15B1CB")
+        textSize(64)
+        fill(0)
+        stroke(0)
+        if did_user_win:
+            end_game_message = "YOU WON"
+        else:
+            end_game_message = "YOU LOSE"
+        
+        text(end_game_message, s_width/2 - 150, 70)
+
 def starting_menu():
     # State globals being used.
     global in_menu_screen, in_cpu_selection_screen, in_game
@@ -87,40 +97,6 @@ def starting_menu():
         fill(0)
         stroke(0)
         text("PLAY", s_width/2 - 57, 315)
-    elif in_cpu_selection_screen and not(give_instructions):
-        # User has selected play and is now in CPU selection.
-        cpu_selection_message = "Please select a difficulty of CPU to play against."
-        textSize(16)
-        fill(0)
-        stroke(0)
-        text(cpu_selection_message, s_width/2 - 175, 100)
-
-        # Draw EASY button.
-        fill(125)
-        stroke(125)
-        rect(300, 105, 200, 100)
-        textSize(48)
-        fill(0)
-        stroke(0)
-        text("EASY", s_width/2 - 57, 170)
-        
-        # Draw MEDIUM button.
-        fill(125)
-        stroke(125)
-        rect(300, 210, 200, 100)
-        textSize(48)
-        fill(0)
-        stroke(0)
-        text("MEDI", s_width/2 - 57, 275)
-        
-        # Draw MEDIUM button.
-        fill(125)
-        stroke(125)
-        rect(300, 315, 200, 100)
-        textSize(48)
-        fill(0)
-        stroke(0)
-        text("HARD", s_width/2 - 57, 380)
     else:
         # Give instructions.
         textSize(15)
@@ -141,21 +117,10 @@ def adjust_game_to_difficulty():
         random_pos_or_neg = -1
     else:
         random_pos_or_neg = 1
-    
-    # Check if on EASY
-    if game_mode_difficulty == game_modes[0]:
-        sq_x_speed = -2
-        sq_y_speed = random_pos_or_neg * 2
-        
-    # Check if on MEDI
-    elif game_mode_difficulty == game_modes[1]:
-        sq_x_speed = -4
-        sq_y_speed = random_pos_or_neg * 3
 
-    # Check if on HARD
-    elif game_mode_difficulty == game_modes[2]:
-        sq_x_speed = -6
-        sq_y_speed = random_pos_or_neg * 4
+    # Set ball speed
+    sq_x_speed = -4
+    sq_y_speed = random_pos_or_neg * 3
 
 def run_game():
     # Define globals
@@ -172,11 +137,13 @@ def run_game():
     
     # Draw CPU paddle
     cpu_logic()
-    draw_paddle_rect(False, cpu_paddle_y_pos)
 
     # Draw square (ball)    
     draw_square()
     
+    # Check score
+    check_score()
+
     # Return logic
     if not(in_game_over):
         # Not in game over state, return False to keep running this function.
@@ -185,31 +152,32 @@ def run_game():
         # In game over state, return True ot exit this function.
         return True
 
+def check_score():
+    global user_score, cpu_score, in_game_over, did_user_win
+    if user_score == 5:
+        in_game_over = True
+        did_user_win = True
+    elif cpu_score == 5:
+        in_game_over = True
+        did_user_win = False
+
 def cpu_logic():
-    # TODO
     # Define globals
     global cpu_paddle_y_pos, cpu_paddle_speed
     
-    # Check if on EASY
-    if game_mode_difficulty == game_modes[0]:
-        cpu_paddle_speed = 20
-
-    # Check if on MEDI
-    elif game_mode_difficulty == game_modes[1]:
-        cpu_paddle_speed = 40
-
-    # Check if on HARD
-    elif game_mode_difficulty == game_modes[2]:
-        cpu_paddle_speed = 50
+    # Set CPU paddle speed
+    cpu_paddle_speed = 2
 
     # Update CPU paddle
-    # # Check if about to hit the bottom of screen
-    # if (cpu_paddle_y_pos + PADDLE_RECT_SIZE[1]) >= s_height:
-    #     cpu_paddle_y_pos += 0
-    # elif cpu_paddle_y_pos <= 0:
-    #     cpu_paddle_y_pos += 0
-    # else:
-    #     cpu_paddle_y_pos += cpu_paddle_speed
+    if cpu_paddle_y_pos < sq_y_pos:
+        cpu_paddle_y_pos += cpu_paddle_speed
+    elif cpu_paddle_y_pos > sq_y_pos:
+        cpu_paddle_y_pos -= cpu_paddle_speed
+    else:
+        pass
+
+    # Draw CPU paddle
+    draw_paddle_rect(False, cpu_paddle_y_pos)
 
 def draw_square():
     # Define globals
@@ -294,25 +262,12 @@ def draw_paddle_rect(is_user, y_pos):
 
 def mouseClicked():
     # Define globals that are going to be used.
-    global in_cpu_selection_screen, game_mode_difficulty, give_instructions
+    global in_cpu_selection_screen, give_instructions
     
     if in_menu_screen:
         if not(in_cpu_selection_screen):
             # Check if user has clicked the PLAY button.
             if (mouseX >= 300 and mouseX <= 500) and (mouseY >= 250 and mouseY <= 350):
-                in_cpu_selection_screen = True
-        else:
-            # Check if user has clicked the EASY button.
-            if (mouseX >= 300 and mouseX <= 500) and (mouseY >= 105 and mouseY <= 205):
-                game_mode_difficulty = game_modes[0]
-                give_instructions = True
-            # Check if user has clicked the MEDI button.
-            elif (mouseX >= 300 and mouseX <= 500) and (mouseY >= 210 and mouseY <= 310):
-                game_mode_difficulty = game_modes[1]
-                give_instructions = True
-            # Check if user has clicked the HARD button.
-            elif (mouseX >= 300 and mouseX <= 500) and (mouseY >= 315 and mouseY <= 415):
-                game_mode_difficulty = game_modes[2]
                 give_instructions = True
                 
 def keyPressed():
