@@ -63,6 +63,9 @@ def draw():
         text(end_game_message, s_width/2 - 150, 70)
 
 def starting_menu():
+    """
+    Draw the menu that is displayed to players upon starting game.
+    """
     # State globals being used.
     global in_menu_screen, in_cpu_selection_screen, in_game
     
@@ -108,6 +111,9 @@ def starting_menu():
     return return_exit_value
 
 def adjust_game_to_difficulty():
+    """
+    Make initial adjustments to the initial settings of the game.
+    """
     global has_game_value_been_adjusted, sq_x_speed, sq_y_speed
     has_game_value_been_adjusted = True
     
@@ -123,6 +129,9 @@ def adjust_game_to_difficulty():
     sq_y_speed = random_pos_or_neg * 3
 
 def run_game():
+    """
+    Run the main game logic.
+    """
     # Define globals
     global user_paddle_y_pos
 
@@ -153,6 +162,10 @@ def run_game():
         return True
 
 def check_score():
+    """
+    Check the score for both user and CPU. Which ever equals 5 first, global variables will be adjusted to
+    display final results.
+    """
     global user_score, cpu_score, in_game_over, did_user_win
     if user_score == 5:
         in_game_over = True
@@ -162,6 +175,9 @@ def check_score():
         did_user_win = False
 
 def cpu_logic():
+    """
+    Define and draw CPU paddle patterns based on predefined logic.
+    """
     # Define globals
     global cpu_paddle_y_pos, cpu_paddle_speed
     
@@ -180,6 +196,9 @@ def cpu_logic():
     draw_paddle_rect(False, cpu_paddle_y_pos)
 
 def draw_square():
+    """
+    Draw the game ball (sqaure). Also, checks if hitting paddles or bot/top of screen and adjusts accordingly.
+    """
     # Define globals
     global sq_x_pos, sq_y_pos, sq_x_speed, sq_y_speed, cpu_score, user_score
 
@@ -222,7 +241,10 @@ def draw_square():
         # Reset square
         sq_x_pos, sq_y_pos = initial_x, initial_y
 
-def draw_field():    
+def draw_field():
+    """
+    Draw main field.
+    """
     # Colour of center line
     fill(255)
     stroke(255)
@@ -249,6 +271,9 @@ def draw_field():
     text(_cpu_score, cpu_x_pos, score_y_pos)
 
 def draw_paddle_rect(is_user, y_pos):
+    """
+    Draw paddle.
+    """
     # Colour of paddles
     fill(255)
     stroke(0)
@@ -261,6 +286,9 @@ def draw_paddle_rect(is_user, y_pos):
         rect(X_POS_RIGHT_SIDE, y_pos, PADDLE_RECT_SIZE[0], PADDLE_RECT_SIZE[1])        
 
 def mouseClicked():
+    """
+    Processing function, gets called when mouse is pressed and released.
+    """
     # Define globals that are going to be used.
     global in_cpu_selection_screen, give_instructions
     
@@ -271,6 +299,9 @@ def mouseClicked():
                 give_instructions = True
                 
 def keyPressed():
+    """
+    Processing fucntion, gets called when any key is pressed.
+    """
     global in_menu_screen, give_instructions, in_game
     if in_menu_screen and give_instructions:
         in_menu_screen = give_instructions = False
