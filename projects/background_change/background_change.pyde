@@ -19,7 +19,6 @@ def draw():
     delay(500) # This delays the program by half a second ie. "pauses" the program. 
                # Makes much it easier to see colour changes.
     
-    # If-else logic that we will discuss in session 3.
     if RED == 255:
         # Checks to see if the screen is red, if true, then we change it so GREEN will be the next background.
         RED = 0
