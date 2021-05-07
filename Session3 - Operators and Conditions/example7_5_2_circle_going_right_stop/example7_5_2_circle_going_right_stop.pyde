@@ -28,9 +28,8 @@ def draw():
     circle(x_pos, y_pos, diameter)
     
     # Check if we hit the top right side of the screen.
-    if x_pos >= (screen_width - initial_x) and y_pos <= initial_y:
+    if x_pos >= (screen_width - initial_x):
         x_inc_value = 0
-        y_inc_value = default_inc_value
     
     # Increment the position of the circle
     x_pos += x_inc_value
