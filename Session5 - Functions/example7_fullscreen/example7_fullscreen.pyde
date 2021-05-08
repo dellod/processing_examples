@@ -7,5 +7,5 @@ This example will set the display window to full screen
 using the fullScreen function.
 """
 
-def settings():
+def setup():
     fullScreen()
