@@ -17,5 +17,3 @@ To play you use the UP/DOWN arrow keys on your keyboard to move the left paddle 
 ### Software/Game Principles
 - Game states
 - Collision detection
-
-
