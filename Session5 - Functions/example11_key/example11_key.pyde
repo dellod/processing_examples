@@ -15,10 +15,9 @@ def draw():
     pass
     ### Uncommenting this section of code will also allow this code to work.
     ### However, you'll notice that there are much more print statements being
-    ### written to console and that is due to the higher refresh rate of the draw
-    ### function compared to the keyPressed function. Remember, keyPressed only
-    ### is called when a key is actually pressed, while draw is running all the
-    ### whole time your program is being run.
+    ### written to console and that is due to the key keyword returning the last key
+    ### pressed. Remember, keyPressed only is called when a key is actually pressed, 
+    ### while draw is running the whole time your program is being run.
     # if key == 'w' or key == 'W':
     #     print("The 'W' key is being pressed.")
     # elif key == 'a' or key == 'A':
