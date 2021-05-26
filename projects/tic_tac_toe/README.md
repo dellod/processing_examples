@@ -1,4 +1,4 @@
-# Snake Game
+# Tic Tac Toe Game
 <img src="assets/demo.gif" alt="tic_tac_toe_demo"/>
 
 ## What is this?
