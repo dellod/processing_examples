@@ -6,4 +6,4 @@
 - Drawing shapes
 - Variables
 
-<b>Link to Slides</b>: [Session 1 - Introduction](https://docs.google.com/presentation/d/1w2AwA1JJPIVNCVO7SERKQPE9g_ArINJYH2LF3sVpVVw/edit?usp=sharing)
+<b><u>Link to Slides</u></b>: [Session 1 - Introduction](https://docs.google.com/presentation/d/1w2AwA1JJPIVNCVO7SERKQPE9g_ArINJYH2LF3sVpVVw/edit?usp=sharing)
