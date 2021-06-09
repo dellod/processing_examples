@@ -15,7 +15,7 @@ def draw():
     
     background(0) # This improves the previous iteration of the moving circle
     # This is necessary as it replaces the previously drawn
-    # circle. That way, we don't get a huge line of circles.
+    # circle. That way, we don't get a huge trail of circles.
     
     circle(x_pos, y_pos, radius) # Draw the circle
     radius += 1 # Grow the size
