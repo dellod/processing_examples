@@ -2,8 +2,11 @@
 # SCRP
 # Daryl Dang
 
-i = 1 
+"""
+Why is this a bad loop?
+"""
 
+i = 1 
 while i < 4:
   print(i)
-  i -= 1 # i = i - 1
+  i -= 1 # i = i - 1 # The same statement but this is shorthand.
