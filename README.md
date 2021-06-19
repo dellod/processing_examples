@@ -20,6 +20,6 @@ Join our <strong>VOLUNTEER</strong> mailing list [here](https://ucalgary.us7.lis
 Join our <strong>PARENT</strong> mailing list here for future workshops and events, or contact Libby at parents@ucra.ca for more information.
 
 ## Installation
-To run these examples on your machine...
-- Have Processing 3.5 or greater installed
-- Install Python 3 mode through the Processing UI
+Download the latest version of Processing [here](https://processing.org/download/).
+
+The default native language of Processing is Java and the Python interface mode can be installed through the Processing UI.
