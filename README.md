@@ -15,9 +15,9 @@ the `Discover Programming (DP)` program. Along with DP, SCRP offers a variety of
 - First Robotics Competition
 - RoboRave
 
-### `For More Information`
+### `CONTACT`
 For volunteering opportunities, contact Ben or Kirk at Volunteers@thesteamgeneration.ca for more information.\
-For more information regarding workshops and joining the parent email list, contact Libby at Vp@thesteamgeneration.ca for more information.
+For more information regarding workshops and joining the parent email list, contact Libby at Vp@thesteamgeneration.ca.
 
 ## Installation
 Download the latest version of Processing [here](https://processing.org/download/).
