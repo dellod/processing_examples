@@ -16,8 +16,8 @@ the `Discover Programming (DP)` program. Along with DP, SCRP offers a variety of
 - RoboRave
 
 ### `For More Information`
-Join our <strong>VOLUNTEER</strong> mailing list [here](https://ucalgary.us7.list-manage.com/subscribe?u=5209e3ff81bd53bbef6d18692&id=0e9ff6b991) or contact Ben and Kirk at mentors@ucra.ca for more information.\
-Join our <strong>PARENT</strong> mailing list here for future workshops and events, or contact Libby at parents@ucra.ca for more information.
+For volunteering opportunities, contact Ben or Kirk at Volunteers@thesteamgeneration.ca for more information.\
+For more information regarding workshops and joining the parent email list, contact Libby at Vp@thesteamgeneration.ca for more information.
 
 ## Installation
 Download the latest version of Processing [here](https://processing.org/download/).
